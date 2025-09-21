@@ -16,20 +16,20 @@ let mandje = JSON.parse(localStorage.getItem("mandje")) || [];
 // Producten opslaan
 function saveProducten() {
   localStorage.setItem("producten", JSON.stringify(producten));
-}
+
 
 // Mandje opslaan
-function saveMandje() {...}
+function saveMandje() {
   localStorage.setItem("mandje", JSON.stringify(mandje));
-}
+
 
 // Toon alle producten
-function toonProducten() {...}
+function toonProducten() {
   container.innerHTML = "";
   detailContainer.style.display = "none";
   container.style.display = "flex";
 
-  producten.forEach((p, index) => {...}
+  producten.forEach((p, index) => {
     const kaart = document.createElement("div");
     kaart.className = "product";
     kaart.innerHTML = `
@@ -42,11 +42,11 @@ function toonProducten() {...}
       <button class="verwijder" onclick="verwijderProduct(${index})">❌ Verwijder</button>
     `;
     container.appendChild(kaart);
-  });
-}
+  );
+
 
 // Detailpagina tonen
-function bekijkProduct(index) {...}
+function bekijkProduct(index) {
   const p = producten[index];
   container.style.display = "none";
   detailContainer.style.display = "block";
@@ -61,10 +61,10 @@ function bekijkProduct(index) {...}
       <button onclick="toonProducten()">⬅ Terug</button>
     </div>
   `;
-}
+
 
 // Product toevoegen
-function voegProductToe() {...}
+function voegProductToe() {
   const naam = document.getElementById("naam").value;
   const prijs = parseFloat(document.getElementById("prijs").value);
   const verkoper = document.getElementById("verkoper").value;
@@ -73,7 +73,7 @@ function voegProductToe() {...}
 
   if (naam && prijs && verkoper && beschrijving && fotoInput.files[0]) {
     const reader = new FileReader();
-    reader.onload = function(e) {...}
+    reader.onload = function(e) {
       const nieuwProduct = { naam, prijs, verkoper, beschrijving, foto: e.target.result };
       producten.push(nieuwProduct);
       saveProducten();
@@ -85,47 +85,47 @@ function voegProductToe() {...}
       document.getElementById("verkoper").value = "";
       document.getElementById("beschrijving").value = "";
       fotoInput.value = "";
-    };
+    ;
     reader.readAsDataURL(fotoInput.files[0]);
-  } else {...}
+   else {...}
     alert("Vul alle velden in en kies een foto!");
-  }
-}
+  
+
 
 // Verwijder product
-function verwijderProduct(index) {...}
-  if (confirm("Weet je zeker dat je dit product wilt verwijderen?")) {...}
+function verwijderProduct(index) {
+  if (confirm("Weet je zeker dat je dit product wilt verwijderen?")) {
     producten.splice(index, 1);
     saveProducten();
     toonProducten();
-  }
-}
+  
+
 
 // Voeg product aan mandje toe
-function voegAanMandjeToe(index) {...}
+function voegAanMandjeToe(index) {
   mandje.push(producten[index]);
   saveMandje();
   toonMandje();
-}
+
 
 // Verwijder product uit mandje
-function verwijderUitMandje(index) {...}
+function verwijderUitMandje(index) {
   mandje.splice(index, 1);
   saveMandje();
   toonMandje();
-}
+
 
 // Mandje leegmaken
-function leegMandje() {...}
+function leegMandje() {
   if (confirm("Weet je zeker dat je je hele mandje wilt leegmaken?")) {
     mandje = [];
     saveMandje();
     toonMandje();
-  }
-}
+  
+
 
 // Toon mandje
-function toonMandje() {...}
+function toonMandje() {
   mandjeLijst.innerHTML = "";
   let totaal = 0;
 
@@ -135,14 +135,14 @@ function toonMandje() {...}
     li.innerHTML = `${p.naam} - €${p.prijs} 
       <button onclick="verwijderUitMandje(${index})">❌</button>`;
     mandjeLijst.appendChild(li);
-  });
+  );
 
   totaalPrijsElement.textContent = `Totaal: €${totaal}`;
 
   if (mandje.length > 0) {
     totaalPrijsElement.innerHTML += `<br><a href="checkout.html">➡ Naar afrekenen</a>`;
-  }
 }
+
 
 // Start
 toonProducten();
