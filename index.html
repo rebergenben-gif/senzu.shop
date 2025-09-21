@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Onze Verkoopsite</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Comfortaa lettertype -->
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Logo -->
+  <header>
+    <img src="images/logo.png" alt="Onze Shop" id="logo">
+  </header>
+
+  <h1>Welkom op onze verkoopsite</h1>
+  <p>Alle producten worden verkocht door mij en mijn vriend.</p>
+
+  <!-- Winkelmandje -->
+  <div id="winkelmandje">
+    <h2>🛒 Winkelmandje</h2>
+    <ul id="mandjeLijst"></ul>
+    <p id="totaalPrijs"></p>
+    <button onclick="leegMandje()">Leeg winkelmandje</button>
+  </div>
+
+  <!-- Formulier om een product toe te voegen -->
+  <div id="uploadForm">
+    <h2>Product toevoegen</h2>
+    <input type="text" id="naam" placeholder="Productnaam" required>
+    <input type="text" id="prijs" placeholder="Prijs (bv. 30 of 30.00)" required>
+    <input type="text" id="verkoper" placeholder="Verkoper" required>
+    <textarea id="beschrijving" placeholder="Beschrijving" required></textarea>
+    <input type="file" id="foto" accept="image/*" required>
+    <button onclick="voegProductToe()">Toevoegen</button>
+  </div>
+
+  <hr>
+
+  <!-- Overzicht van producten -->
+  <div id="producten"></div>
+
+  <!-- Detailpagina voor één product -->
+  <div id="productDetail" style="display: none;"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
