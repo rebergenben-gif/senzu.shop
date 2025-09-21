@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bedankt voor uw aankoop</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { text-align:center; padding:40px; font-family:Arial, sans-serif; }
+    h1 { font-size:2rem; color:#27ae60; }
+    .qr { margin-top:20px; }
+    .actions { margin-top:18px; display:flex; gap:10px; justify-content:center; }
+    .actions button { padding:10px 14px; border-radius:8px; border:none; cursor:pointer; background:#3498db; color:white; }
+  </style>
+</head>
+<body>
+  <h1>😁🎉 Bedankt voor uw aankoop 🎉😁</h1>
+  <p>Uw bestelling staat klaar om op te halen!</p>
+
+  <div class="qr card">
+    <p>Scan deze QR-code voor de ophaalinstructies:</p>
+    <!-- Pas deze URL aan naar: https://<jouw-gebruikersnaam>.github.io/<repo-naam>/ophalen.html -->
+    <img src="https://chart.googleapis.com/chart?cht=qr&chs=240x240&chl=https://jouw-gebruikersnaam.github.io/verkoopsite/ophalen.html" alt="QR Code naar ophalen">
+  </div>
+
+  <div class="actions">
+    <button onclick="window.location.href='ophalen.html'">📍 Ophaalinstructies</button>
+    <button onclick="window.location.href='index.html'">⬅ Terug naar de winkel</button>
+  </div>
+</body>
+</html>
