@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>Onze senzu.shop</title>
+  <title>Onze Verkoopsite</title>
   <link rel="stylesheet" href="style.css">
   <!-- Comfortaa lettertype -->
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
   <div id="uploadForm">
     <h2>Product toevoegen</h2>
     <input type="text" id="naam" placeholder="Productnaam" required>
-    <input type="text" id="prijs" placeholder="Prijs (bv. 30 of 30.00)" required>
+    <input type="number" step="0.01" id="prijs" placeholder="Prijs (bv. 30 of 30.00)" required>
     <input type="text" id="verkoper" placeholder="Verkoper" required>
     <textarea id="beschrijving" placeholder="Beschrijving" required></textarea>
     <input type="file" id="foto" accept="image/*" required>
@@ -43,6 +43,7 @@
   <!-- Detailpagina voor één product -->
   <div id="productDetail" style="display: none;"></div>
 
+  <!-- Koppel naar script.js -->
   <script src="script.js"></script>
 </body>
 </html>
