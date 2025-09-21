@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Bedankt voor uw aankoop</title>
+  <meta charset="UTF-8">
+  <title>Bedankt voor je aankoop</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body { text-align:center; padding:40px; font-family:Arial, sans-serif; }
-    h1 { font-size:2rem; color:#27ae60; }
-    .qr { margin-top:20px; }
-    .actions { margin-top:18px; display:flex; gap:10px; justify-content:center; }
-    .actions button { padding:10px 14px; border-radius:8px; border:none; cursor:pointer; background:#3498db; color:white; }
-  </style>
+  <!-- Comfortaa font -->
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>😁🎉 Bedankt voor uw aankoop 🎉😁</h1>
-  <p>Uw bestelling staat klaar om op te halen!</p>
+  <header>
+    <img src="images/logo.png" alt="Onze Shop" id="logo">
+  </header>
 
-  <div class="qr card">
-    <p>Scan deze QR-code voor de ophaalinstructies:</p>
-    <!-- Pas deze URL aan naar: https://<jouw-gebruikersnaam>.github.io/<repo-naam>/ophalen.html -->
-    <img src="https://chart.googleapis.com/chart?cht=qr&chs=240x240&chl=https://jouw-gebruikersnaam.github.io/verkoopsite/ophalen.html" alt="QR Code naar ophalen">
-  </div>
+  <main>
+    <h1>🎉 Bedankt voor uw aankoop 😁</h1>
+    <p>We hebben je bestelling ontvangen.</p>
+    <p>Je kunt je producten ophalen bij ons ophaalpunt:</p>
 
-  <div class="actions">
-    <button onclick="window.location.href='ophalen.html'">📍 Ophaalinstructies</button>
-    <button onclick="window.location.href='index.html'">⬅ Terug naar de winkel</button>
-  </div>
+    <div class="ophaal-info">
+      <h2>📍 Ophaaladres</h2>
+      <p>
+        Voorstraat 12<br>
+        1234 AB Utrecht<br>
+        Nederland
+      </p>
+
+      <h2>🕒 Ophaaltijden</h2>
+      <p>
+        Maandag t/m Vrijdag: 10:00 – 18:00<br>
+        Zaterdag: 11:00 – 16:00<br>
+        Zondag: Gesloten
+      </p>
+    </div>
+
+    <button onclick="window.location.href='index.html'">⬅ Terug naar de shop</button>
+  </main>
 </body>
 </html>
